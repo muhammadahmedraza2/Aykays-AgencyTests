@@ -1,0 +1,43 @@
+.cards{
+    margin-top: 60px;
+}
+/*
+.card-title{
+    text-align: center;
+}
+*/
+.card-text{
+  font-size: 20px;
+  margin-top: 10px;
+} 
+
+.custom-card {
+    width: 80%; /* column ke andar fit */
+    max-width: 5170x;  /* roughly 1716.67px / 3, responsive friendly */
+    height: 210.67px;  /* given height */
+    border-radius: 21.33px; /* smooth corners */
+    padding: 20px; /* inner spacing */
+    box-sizing: border-box;
+    text-align: center;
+}
+
+/* Responsive adjustments */
+@media (max-width: 992px) {
+    .custom-card {
+        max-width: 100%;
+        height: auto;
+    }
+}
+
+/* Card base */
+.custom-card {
+    border-radius: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+/* Hover effect */
+.custom-card:hover {
+    transform: translateY(-10px);           /* Thodi upar lift */
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2); /* Shadow intense on hover */
+}

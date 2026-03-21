@@ -1,0 +1,96 @@
+.testimonial-section {
+  padding: 60px;
+  background: #f5f5f5;
+}
+
+/* GRID */
+.testimonial-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 26px;
+}
+
+/* CARD */
+.card {
+  background: white;
+  border-radius: 42px;
+  padding: 30px;
+  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  transition: all 0.3s ease;
+}
+
+/* HOVER EFFECT 🔥 */
+.card:hover {
+  transform: translateY(-8px);
+}
+
+/* HIDDEN EXTRA */
+.extra {
+  display: none;
+}
+
+/* SHOW WHEN CHECKED */
+#toggleCards:checked ~ .testimonial-grid .extra {
+  display: block;
+}
+
+/* BUTTON */
+.btn-container {
+  text-align: center;
+  margin-top: 40px;
+}
+
+.see-more-btn {
+  cursor: pointer;
+  color: #ff4d43;
+  font-weight: 600;
+  font-size: 16px;
+}
+
+/* TOGGLE TEXT */
+.see-more-btn .less {
+  display: none;
+}
+
+#toggleCards:checked ~ .btn-container .more {
+  display: none;
+}
+
+#toggleCards:checked ~ .btn-container .less {
+  display: inline;
+}
+
+
+.stars {
+
+  display:flex;
+
+  flex-direction:row;   /* ✅ normal order */
+
+  gap:4px;
+
+  cursor:pointer;
+
+}
+
+
+.stars span{
+
+  font-size:18px;
+
+  color:#f5b301;
+
+  transition:color .3s;
+
+}
+
+/* ON HOVER → sab grey */
+.stars:hover span {
+  color: #ddd;
+}
+
+/* HOVERED + LEFT SIDE YELLOW */
+.stars span:hover,
+.stars span:hover ~ span {
+  color: #f5b301;
+}

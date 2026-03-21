@@ -1,0 +1,87 @@
+/* Cards styling */
+.custom-step-card {
+    background: #ffffff;
+    border-radius: 20px;
+    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    padding: 32px;
+}
+
+/* Mobile Image Hover Effect */
+.mobile-img-2 {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.mobile-img-2:hover {
+    transform: translateY(-10px);  /* Thodi si upar move */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* subtle shadow on hover */
+}
+
+/* Hover effect for cards */
+.custom-step-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+/* Step Numbers */
+.steps-flow {
+    width: 100%;
+    max-width: 762px;  /* Optional: fixed horizontal flow width */
+    margin: 0 auto;
+    position: relative;
+}
+
+/* Step number box */
+.step-number-box {
+    width: 60px;
+    height: 60px;
+    background: #ff4d43;
+    color: #fff;
+    font-size: 1.5rem;
+    font-weight: 700;
+    border-radius: 50%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1;
+}
+
+/* Divider line between numbers */
+.divider {
+    flex: 1;
+    height: 4px;
+    background: #ccc;
+    margin: 0 10px;
+    position: relative;
+    top: 0;
+}
+
+.hero-btn{
+background:#fff;
+color:#ff4d43;
+border:0;
+padding:12px 28px;
+border-radius:25px;
+font-weight:600;
+cursor:pointer;
+transition:.3s;
+}
+
+.hero-btn:hover{
+background:#000;
+color:#fff;
+}
+
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .steps-flow {
+        flex-direction: column;
+        align-items: center;
+    }
+    .divider {
+        width: 4px;
+        height: 50px;
+        margin: 10px 0;
+    }
+}
