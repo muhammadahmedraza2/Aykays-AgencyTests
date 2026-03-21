@@ -39,9 +39,11 @@
 
 /* ── COLUMN ── */
 .col-sm-4 {
-    flex: 1 1 280px;       /* grow/shrink, base 280px */
+    flex: 1 1 280px;
+    /* grow/shrink, base 280px */
     max-width: 350px;
-    min-width: 0;          /* prevent overflow */
+    min-width: 0;
+    /* prevent overflow */
     box-sizing: border-box;
 }
 
@@ -55,7 +57,8 @@
     background-color: #fff;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
-    height: 100%;          /* equal height cards */
+    height: 100%;
+    /* equal height cards */
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -64,7 +67,7 @@
 /* ── CARD HOVER ── */
 .custom-card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
 }
 
 /* touch screens - no hover shift */
@@ -88,7 +91,8 @@
     font-size: clamp(13px, 1.1vw, 18px);
     margin-top: 8px;
     line-height: 1.6;
-    flex: 1;               /* push content evenly */
+    flex: 1;
+    /* push content evenly */
 }
 
 /* ── LARGE SCREENS - 3 cards per row ── */

@@ -1,6 +1,6 @@
 import { AfterViewInit, Component } from '@angular/core';
 import gsap from 'gsap';
-import { ScrollTrigger } from 'gsap/all';   // <-- Correct import for Angular/TS
+import { ScrollTrigger } from 'gsap/all';  
 
 gsap.registerPlugin(ScrollTrigger);
 

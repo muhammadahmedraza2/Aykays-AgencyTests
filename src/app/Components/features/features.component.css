@@ -20,24 +20,25 @@
   background: white;
   border-radius: clamp(20px, 3vw, 42px);
   padding: clamp(16px, 2.5vw, 30px);
-  box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
   transition: transform 0.3s ease, box-shadow 0.3s ease;
   box-sizing: border-box;
-  min-width: 0; /* prevent overflow */
+  min-width: 0;
+  /* prevent overflow */
   width: 100%;
 }
 
 /* ── CARD HOVER ── */
 .card:hover {
   transform: translateY(-8px);
-  box-shadow: 0 18px 35px rgba(0,0,0,0.1);
+  box-shadow: 0 18px 35px rgba(0, 0, 0, 0.1);
 }
 
 /* touch screens - no hover */
 @media (hover: none) {
   .card:hover {
     transform: none;
-    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.05);
   }
 }
 
@@ -47,7 +48,7 @@
 }
 
 /* ── SHOW WHEN CHECKED ── */
-#toggleCards:checked ~ .testimonial-grid .extra {
+#toggleCards:checked~.testimonial-grid .extra {
   display: block;
 }
 
@@ -68,18 +69,20 @@
   transition: opacity 0.2s;
 }
 
-.see-more-btn:hover { opacity: 0.75; }
+.see-more-btn:hover {
+  opacity: 0.75;
+}
 
 /* ── TOGGLE TEXT ── */
 .see-more-btn .less {
   display: none;
 }
 
-#toggleCards:checked ~ .btn-container .more {
+#toggleCards:checked~.btn-container .more {
   display: none;
 }
 
-#toggleCards:checked ~ .btn-container .less {
+#toggleCards:checked~.btn-container .less {
   display: inline;
 }
 
@@ -100,11 +103,15 @@
 }
 
 /* hover - sab grey */
-.stars:hover span { color: #ddd; }
+.stars:hover span {
+  color: #ddd;
+}
 
 /* hovered + left side yellow */
 .stars span:hover,
-.stars span:hover ~ span { color: #f5b301; }
+.stars span:hover~span {
+  color: #f5b301;
+}
 
 /* ── 4K SCREENS ── */
 @media (min-width: 1800px) {

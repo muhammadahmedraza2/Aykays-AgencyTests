@@ -28,7 +28,7 @@
   width: 420px;
   height: 420px;
   border-radius: 50%;
-  background: rgba(255,255,255,0.06);
+  background: rgba(255, 255, 255, 0.06);
   top: -150px;
   left: -100px;
   pointer-events: none;
@@ -40,7 +40,7 @@
   width: 260px;
   height: 260px;
   border-radius: 50%;
-  background: rgba(255,255,255,0.04);
+  background: rgba(255, 255, 255, 0.04);
   bottom: -80px;
   left: 200px;
   pointer-events: none;
@@ -92,21 +92,23 @@
   gap: 10px;
   cursor: pointer;
   transition: transform 0.2s ease, box-shadow 0.2s ease;
-  box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
   white-space: nowrap;
 }
 
 .store:hover {
   transform: translateY(-3px);
-  box-shadow: 0 8px 24px rgba(0,0,0,0.18);
+  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.18);
 }
 
-.store:active { transform: scale(.97); }
+.store:active {
+  transform: scale(.97);
+}
 
 @media (hover: none) {
   .store:hover {
     transform: none;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.12);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.12);
   }
 }
 
@@ -177,9 +179,13 @@
     margin: 0 auto;
   }
 
-  .download-left h1 { font-size: 52px; }
+  .download-left h1 {
+    font-size: 52px;
+  }
 
-  .mobile { width: 340px; }
+  .mobile {
+    width: 340px;
+  }
 }
 
 /* ── LARGE 1400px ── */
@@ -189,16 +195,24 @@
     margin: 0 auto;
   }
 
-  .mobile { width: 320px; }
+  .mobile {
+    width: 320px;
+  }
 }
 
 /* ── TABLET 768px - 991px ── */
 @media (max-width: 991px) and (min-width: 768px) {
-  .download-left h1 { font-size: 28px; }
+  .download-left h1 {
+    font-size: 28px;
+  }
 
-  .mobile { width: clamp(140px, 18vw, 220px); }
+  .mobile {
+    width: clamp(140px, 18vw, 220px);
+  }
 
-  .back { right: clamp(100px, 13vw, 160px); }
+  .back {
+    right: clamp(100px, 13vw, 160px);
+  }
 }
 
 /* ── MOBILE 767px se neeche ── */
@@ -218,7 +232,9 @@
     width: 100%;
   }
 
-  .desc { margin-inline: auto; }
+  .desc {
+    margin-inline: auto;
+  }
 
   .store-buttons {
     justify-content: center;
@@ -260,12 +276,16 @@
     padding: 28px 16px clamp(150px, 38vw, 200px);
   }
 
-  .download-left h1 { font-size: 22px; }
+  .download-left h1 {
+    font-size: 22px;
+  }
 
   .store-buttons {
     flex-direction: column;
     align-items: center;
   }
 
-  .mobile { width: clamp(100px, 24vw, 140px); }
+  .mobile {
+    width: clamp(100px, 24vw, 140px);
+  }
 }

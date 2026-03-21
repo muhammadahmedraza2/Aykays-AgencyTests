@@ -2,24 +2,25 @@
 .custom-step-card {
     background: #ffffff;
     border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     padding: clamp(18px, 2.5vw, 32px);
     width: 100%;
     box-sizing: border-box;
-    min-width: 0; /* prevent overflow */
+    min-width: 0;
+    /* prevent overflow */
 }
 
 .custom-step-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
 }
 
 /* touch screens - no hover */
 @media (hover: none) {
     .custom-step-card:hover {
         transform: none;
-        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
     }
 }
 
@@ -33,7 +34,7 @@
 
 .mobile-img-2:hover {
     transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
 
 @media (hover: none) {
@@ -47,7 +48,8 @@
 .steps-flow {
     width: 100%;
     max-width: 762px;
-    margin: 30px auto 0; /* margin-top 30px as requested */
+    margin: 30px auto 0;
+    /* margin-top 30px as requested */
     position: relative;
     display: flex;
     align-items: center;
@@ -68,7 +70,8 @@
     justify-content: center;
     align-items: center;
     z-index: 1;
-    flex-shrink: 0; /* circle kabhi squeeze na ho */
+    flex-shrink: 0;
+    /* circle kabhi squeeze na ho */
 }
 
 /* ── DIVIDER ── */
@@ -78,7 +81,8 @@
     background: #ccc;
     margin: 0 10px;
     position: relative;
-    min-width: 20px; /* bahut choti screen pe bhi thoda space */
+    min-width: 20px;
+    /* bahut choti screen pe bhi thoda space */
 }
 
 /* ── HERO BUTTON ── */

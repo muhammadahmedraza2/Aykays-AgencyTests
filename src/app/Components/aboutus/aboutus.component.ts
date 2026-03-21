@@ -12,7 +12,6 @@ gsap.registerPlugin(ScrollTrigger);
 export class AboutusComponent implements AfterViewInit {
 
 ngAfterViewInit(): void {
-  // Animate Left Image (from right)
   gsap.from(".left-img", {
     x: 100,
     opacity: 0,
@@ -22,11 +21,9 @@ ngAfterViewInit(): void {
       trigger: ".left-img",
       start: "top 80%",
       toggleActions: "restart pause restart pause", // <-- key line
-      // "onEnter onLeave onEnterBack onLeaveBack"
     }
   });
 
-  // Animate Horizontal Cards (from bottom)
   gsap.from(".custom-horizontal-card", {
     y: 50,
     opacity: 0,
@@ -36,7 +33,7 @@ ngAfterViewInit(): void {
     scrollTrigger: {
       trigger: ".horizontal-cards-wrapper",
       start: "top 80%",
-      toggleActions: "restart pause restart pause", // <-- ensures every scroll triggers
+      toggleActions: "restart pause restart pause", 
     }
   });
 }

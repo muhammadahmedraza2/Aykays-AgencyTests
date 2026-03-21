@@ -1,17 +1,17 @@
 .custom-horizontal-card {
-    flex: 1 1 300px;              /* Flexible width */
+    flex: 1 1 300px;
     min-height: 157.33px;
     padding: 32px;
     border-radius: 21.33px;
     background: #ffffff;
-    box-shadow: 0 5px 20px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.1);
     text-align: center;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
 .custom-horizontal-card:hover {
     transform: translateY(-5px);
-    box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
 }
 
 .horizontal-cards-wrapper {
@@ -21,11 +21,13 @@
     justify-content: center;
 }
 
-.img-fluid.rounded, .left-img {
+.img-fluid.rounded,
+.left-img {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.img-fluid.rounded:hover, .left-img:hover {
+.img-fluid.rounded:hover,
+.left-img:hover {
     transform: translateY(-10px);
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
 }
