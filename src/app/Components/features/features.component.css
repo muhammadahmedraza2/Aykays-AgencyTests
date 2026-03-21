@@ -1,53 +1,76 @@
+/* ── TESTIMONIAL SECTION ── */
 .testimonial-section {
-  padding: 60px;
+  padding: clamp(30px, 5vw, 60px) clamp(16px, 5vw, 60px);
   background: #f5f5f5;
+  overflow: hidden;
+  box-sizing: border-box;
 }
 
-/* GRID */
+/* ── GRID ── */
 .testimonial-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 26px;
+  gap: clamp(14px, 2vw, 26px);
+  width: 100%;
+  box-sizing: border-box;
 }
 
-/* CARD */
+/* ── CARD ── */
 .card {
   background: white;
-  border-radius: 42px;
-  padding: 30px;
+  border-radius: clamp(20px, 3vw, 42px);
+  padding: clamp(16px, 2.5vw, 30px);
   box-shadow: 0 10px 25px rgba(0,0,0,0.05);
-  transition: all 0.3s ease;
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+  box-sizing: border-box;
+  min-width: 0; /* prevent overflow */
+  width: 100%;
 }
 
-/* HOVER EFFECT 🔥 */
+/* ── CARD HOVER ── */
 .card:hover {
   transform: translateY(-8px);
+  box-shadow: 0 18px 35px rgba(0,0,0,0.1);
 }
 
-/* HIDDEN EXTRA */
+/* touch screens - no hover */
+@media (hover: none) {
+  .card:hover {
+    transform: none;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.05);
+  }
+}
+
+/* ── HIDDEN EXTRA ── */
 .extra {
   display: none;
 }
 
-/* SHOW WHEN CHECKED */
+/* ── SHOW WHEN CHECKED ── */
 #toggleCards:checked ~ .testimonial-grid .extra {
   display: block;
 }
 
-/* BUTTON */
+/* ── BUTTON ── */
 .btn-container {
   text-align: center;
-  margin-top: 40px;
+  margin-top: clamp(24px, 3vw, 40px);
 }
 
 .see-more-btn {
   cursor: pointer;
   color: #ff4d43;
   font-weight: 600;
-  font-size: 16px;
+  font-size: clamp(14px, 1.2vw, 16px);
+  background: none;
+  border: none;
+  padding: 8px 16px;
+  transition: opacity 0.2s;
 }
 
-/* TOGGLE TEXT */
+.see-more-btn:hover { opacity: 0.75; }
+
+/* ── TOGGLE TEXT ── */
 .see-more-btn .less {
   display: none;
 }
@@ -60,37 +83,95 @@
   display: inline;
 }
 
-
+/* ── STARS ── */
 .stars {
-
-  display:flex;
-
-  flex-direction:row;   /* ✅ normal order */
-
-  gap:4px;
-
-  cursor:pointer;
-
+  display: flex;
+  flex-direction: row;
+  gap: clamp(2px, 0.5vw, 4px);
+  cursor: pointer;
+  flex-wrap: nowrap;
 }
 
-
-.stars span{
-
-  font-size:18px;
-
-  color:#f5b301;
-
-  transition:color .3s;
-
-}
-
-/* ON HOVER → sab grey */
-.stars:hover span {
-  color: #ddd;
-}
-
-/* HOVERED + LEFT SIDE YELLOW */
-.stars span:hover,
-.stars span:hover ~ span {
+.stars span {
+  font-size: clamp(14px, 1.5vw, 18px);
   color: #f5b301;
+  transition: color 0.3s;
+  line-height: 1;
+}
+
+/* hover - sab grey */
+.stars:hover span { color: #ddd; }
+
+/* hovered + left side yellow */
+.stars span:hover,
+.stars span:hover ~ span { color: #f5b301; }
+
+/* ── 4K SCREENS ── */
+@media (min-width: 1800px) {
+  .testimonial-section {
+    padding: 80px 100px;
+  }
+
+  .testimonial-grid {
+    max-width: 1600px;
+    margin: 0 auto;
+    gap: 32px;
+  }
+
+  .card {
+    padding: 38px;
+    border-radius: 48px;
+  }
+}
+
+/* ── LARGE 1400px ── */
+@media (min-width: 1400px) {
+  .testimonial-grid {
+    max-width: 1300px;
+    margin: 0 auto;
+  }
+}
+
+/* ── TABLET 768px - 991px ── */
+@media (max-width: 991px) and (min-width: 601px) {
+  .testimonial-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* ── MOBILE 600px se neeche ── */
+@media (max-width: 600px) {
+  .testimonial-section {
+    padding: 30px 14px;
+  }
+
+  .testimonial-grid {
+    grid-template-columns: 1fr;
+    gap: 14px;
+  }
+
+  .card {
+    border-radius: 20px;
+    padding: 18px;
+  }
+}
+
+/* ── VERY SMALL 360px ── */
+@media (max-width: 380px) {
+  .testimonial-section {
+    padding: 24px 10px;
+  }
+
+  .card {
+    border-radius: 16px;
+    padding: 14px;
+  }
+
+  .stars span {
+    font-size: 13px;
+  }
+
+  .see-more-btn {
+    font-size: 13px;
+  }
 }

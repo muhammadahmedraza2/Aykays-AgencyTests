@@ -1,87 +1,200 @@
-/* Cards styling */
+/* ── CARDS ── */
 .custom-step-card {
     background: #ffffff;
     border-radius: 20px;
     box-shadow: 0 10px 30px rgba(0,0,0,0.1);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
-    padding: 32px;
+    padding: clamp(18px, 2.5vw, 32px);
+    width: 100%;
+    box-sizing: border-box;
+    min-width: 0; /* prevent overflow */
 }
 
-/* Mobile Image Hover Effect */
-.mobile-img-2 {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-}
-
-.mobile-img-2:hover {
-    transform: translateY(-10px);  /* Thodi si upar move */
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15); /* subtle shadow on hover */
-}
-
-/* Hover effect for cards */
 .custom-step-card:hover {
     transform: translateY(-5px);
     box-shadow: 0 15px 35px rgba(0,0,0,0.15);
 }
 
-/* Step Numbers */
-.steps-flow {
-    width: 100%;
-    max-width: 762px;  /* Optional: fixed horizontal flow width */
-    margin: 0 auto;
-    position: relative;
+/* touch screens - no hover */
+@media (hover: none) {
+    .custom-step-card:hover {
+        transform: none;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+    }
 }
 
-/* Step number box */
+/* ── MOBILE IMAGE ── */
+.mobile-img-2 {
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
+.mobile-img-2:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+}
+
+@media (hover: none) {
+    .mobile-img-2:hover {
+        transform: none;
+        box-shadow: none;
+    }
+}
+
+/* ── STEPS FLOW ── */
+.steps-flow {
+    width: 100%;
+    max-width: 762px;
+    margin: 30px auto 0; /* margin-top 30px as requested */
+    position: relative;
+    display: flex;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 0 clamp(8px, 2vw, 16px);
+}
+
+/* ── STEP NUMBER BOX ── */
 .step-number-box {
-    width: 60px;
-    height: 60px;
+    width: clamp(44px, 6vw, 60px);
+    height: clamp(44px, 6vw, 60px);
     background: #ff4d43;
     color: #fff;
-    font-size: 1.5rem;
+    font-size: clamp(1rem, 1.5vw, 1.5rem);
     font-weight: 700;
     border-radius: 50%;
     display: flex;
     justify-content: center;
     align-items: center;
     z-index: 1;
+    flex-shrink: 0; /* circle kabhi squeeze na ho */
 }
 
-/* Divider line between numbers */
+/* ── DIVIDER ── */
 .divider {
     flex: 1;
     height: 4px;
     background: #ccc;
     margin: 0 10px;
     position: relative;
-    top: 0;
+    min-width: 20px; /* bahut choti screen pe bhi thoda space */
 }
 
-.hero-btn{
-background:#fff;
-color:#ff4d43;
-border:0;
-padding:12px 28px;
-border-radius:25px;
-font-weight:600;
-cursor:pointer;
-transition:.3s;
+/* ── HERO BUTTON ── */
+.hero-btn {
+    background: #fff;
+    color: #ff4d43;
+    border: 0;
+    padding: clamp(10px, 1.2vw, 14px) clamp(20px, 2vw, 32px);
+    border-radius: 25px;
+    font-size: clamp(13px, 1vw, 16px);
+    font-weight: 600;
+    cursor: pointer;
+    transition: background .3s, color .3s, transform .2s;
+    white-space: nowrap;
 }
 
-.hero-btn:hover{
-background:#000;
-color:#fff;
+.hero-btn:hover {
+    background: #000;
+    color: #fff;
+    transform: translateY(-2px);
 }
 
+@media (hover: none) {
+    .hero-btn:hover {
+        background: #fff;
+        color: #ff4d43;
+        transform: none;
+    }
+}
 
-/* Responsive adjustments */
+/* ── LARGE SCREENS 1400px+ ── */
+@media (min-width: 1400px) {
+    .steps-flow {
+        max-width: 900px;
+    }
+
+    .step-number-box {
+        width: 68px;
+        height: 68px;
+        font-size: 1.6rem;
+    }
+
+    .custom-step-card {
+        padding: 36px;
+    }
+}
+
+/* ── TABLET 768px - 991px ── */
+@media (max-width: 991px) and (min-width: 601px) {
+    .steps-flow {
+        max-width: 560px;
+    }
+
+    .divider {
+        margin: 0 6px;
+    }
+}
+
+/* ── MOBILE 768px se neeche ── */
 @media (max-width: 768px) {
     .steps-flow {
         flex-direction: column;
         align-items: center;
+        max-width: 100%;
+        padding: 0 12px;
     }
+
     .divider {
         width: 4px;
-        height: 50px;
-        margin: 10px 0;
+        height: clamp(30px, 5vw, 50px);
+        flex: unset;
+        margin: 8px 0;
+        min-width: unset;
+    }
+
+    .custom-step-card {
+        border-radius: 16px;
+    }
+}
+
+/* ── VERY SMALL 360px ── */
+@media (max-width: 400px) {
+    .steps-flow {
+        padding: 0 8px;
+    }
+
+    .step-number-box {
+        width: 40px;
+        height: 40px;
+        font-size: 0.9rem;
+    }
+
+    .custom-step-card {
+        padding: 14px;
+        border-radius: 14px;
+    }
+
+    .divider {
+        height: 28px;
+    }
+}
+
+/* ── 4K screens ── */
+@media (min-width: 1800px) {
+    .steps-flow {
+        max-width: 1000px;
+    }
+
+    .step-number-box {
+        width: 76px;
+        height: 76px;
+        font-size: 1.8rem;
+    }
+
+    .custom-step-card {
+        padding: 40px;
+        border-radius: 24px;
     }
 }

@@ -1,43 +1,154 @@
-.cards{
+/* ── CARDS SECTION ── */
+.cards {
     margin-top: 60px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 0 16px;
 }
-/*
-.card-title{
-    text-align: center;
-}
-*/
-.card-text{
-  font-size: 20px;
-  margin-top: 10px;
-} 
 
+.cards p:first-child {
+    font-size: clamp(24px, 3.5vw, 50px);
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 10px;
+    line-height: 1.2;
+}
+
+.cards p:nth-child(2) {
+    font-size: clamp(14px, 1.8vw, 20px);
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 40px;
+    line-height: 1.5;
+    max-width: 600px;
+}
+
+/* ── GRID WRAPPER ── */
+.row.mb-4 {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px;
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0;
+    list-style: none;
+}
+
+/* ── COLUMN ── */
+.col-sm-4 {
+    flex: 1 1 280px;       /* grow/shrink, base 280px */
+    max-width: 350px;
+    min-width: 0;          /* prevent overflow */
+    box-sizing: border-box;
+}
+
+/* ── CARD BASE ── */
 .custom-card {
-    width: 80%; /* column ke andar fit */
-    max-width: 5170x;  /* roughly 1716.67px / 3, responsive friendly */
-    height: 210.67px;  /* given height */
-    border-radius: 21.33px; /* smooth corners */
-    padding: 20px; /* inner spacing */
+    width: 100%;
+    border-radius: 20px;
+    padding: clamp(16px, 2vw, 24px);
     box-sizing: border-box;
     text-align: center;
+    background-color: #fff;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+    height: 100%;          /* equal height cards */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
 }
 
-/* Responsive adjustments */
-@media (max-width: 992px) {
-    .custom-card {
-        max-width: 100%;
-        height: auto;
+/* ── CARD HOVER ── */
+.custom-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+}
+
+/* touch screens - no hover shift */
+@media (hover: none) {
+    .custom-card:hover {
+        transform: none;
+        box-shadow: none;
     }
 }
 
-/* Card base */
-.custom-card {
-    border-radius: 20px;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    cursor: pointer;
+/* ── CARD TITLE ── */
+.custom-card .card-title {
+    font-size: clamp(16px, 1.8vw, 24px);
+    font-weight: 700;
+    margin-bottom: 10px;
+    line-height: 1.3;
 }
 
-/* Hover effect */
-.custom-card:hover {
-    transform: translateY(-10px);           /* Thodi upar lift */
-    box-shadow: 0 15px 35px rgba(0,0,0,0.2); /* Shadow intense on hover */
+/* ── CARD TEXT ── */
+.custom-card .card-text {
+    font-size: clamp(13px, 1.1vw, 18px);
+    margin-top: 8px;
+    line-height: 1.6;
+    flex: 1;               /* push content evenly */
+}
+
+/* ── LARGE SCREENS - 3 cards per row ── */
+@media (min-width: 992px) {
+    .col-sm-4 {
+        flex: 0 0 calc(33.333% - 14px);
+        max-width: calc(33.333% - 14px);
+    }
+}
+
+/* ── MEDIUM SCREENS - 2 cards per row ── */
+@media (max-width: 991px) and (min-width: 600px) {
+    .col-sm-4 {
+        flex: 0 0 calc(50% - 10px);
+        max-width: calc(50% - 10px);
+    }
+}
+
+/* ── SMALL SCREENS - 1 card per row ── */
+@media (max-width: 599px) {
+    .cards {
+        margin-top: 40px;
+        padding: 0 12px;
+    }
+
+    .cards p:nth-child(2) {
+        margin-bottom: 24px;
+    }
+
+    .col-sm-4 {
+        flex: 0 0 100%;
+        max-width: 100%;
+    }
+
+    .custom-card {
+        border-radius: 16px;
+    }
+}
+
+/* ── VERY SMALL - 320px phones ── */
+@media (max-width: 360px) {
+    .cards {
+        padding: 0 8px;
+    }
+
+    .custom-card {
+        padding: 14px;
+        border-radius: 14px;
+    }
+}
+
+/* ── VERY LARGE SCREENS - 4K etc ── */
+@media (min-width: 1400px) {
+    .row.mb-4 {
+        max-width: 1400px;
+        gap: 28px;
+    }
+
+    .col-sm-4 {
+        flex: 0 0 calc(33.333% - 20px);
+        max-width: calc(33.333% - 20px);
+    }
 }
