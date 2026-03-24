@@ -1,11 +1,10 @@
 <section class="download">
-
   <div class="download-container">
 
+    <!-- LEFT -->
     <div class="download-left">
-
       <h1>
-        Join the Fun – Download <br>
+        Join the Fun – Download<br>
         MyBindle Now!
       </h1>
       <p class="subtitle">Your Social Network, Your Way</p>
@@ -14,25 +13,56 @@
         of a Community That's Always Evolving!
       </p>
       <div class="store-buttons">
-        <button class="store">
-          <img src="assets/apples.png.png">
-          <div>
-            <span>Download on the</span>
-            <h4>App Store</h4>
-          </div>
-        </button>
-        <button class="store">
-          <img src="assets/google-playstore-icon (1).png">
-          <div>
-            <span>Get it on</span>
-            <h4>Google Play</h4>
-          </div>
-        </button>
+    <!-- App Store Button -->
+<button class="store">
+  <i class="bi bi-apple" style="font-size:28px; color:#000;"></i>
+  <div>
+    <span>Download on the</span>
+    <h4>App Store</h4>
+  </div>
+</button>
+
+<!-- Google Play Button -->
+<button class="store">
+  <i class="bi bi-google-play" style="font-size:26px; color:#000;"></i>
+  <div>
+    <span>Get it on</span>
+    <h4>Google Play</h4>
+  </div>
+</button>
       </div>
     </div>
 
-    <div class="download-right">
-      <img src="assets/social_app_mockup.png" class="mobile">
-    </div>
+    <!-- RIGHT: 2 phones -->
+<div class="download-right" style="position: relative; width: 400px; height: 400px;">
+
+  <!-- Front phone (Groups.png) — ab PEECHE -->
+  <img src="assets/Groups.png" class="mobile front" 
+       style="
+         width: 300px; 
+         height: 300px; 
+         top: 170px; 
+         right: 500px; 
+         position: absolute; 
+         transform: rotate(0deg); 
+         opacity: 1;
+         z-index: 1;
+       ">
+
+  <!-- Back phone (Body.png) — ab AAGE -->
+  <img src="assets/Body.png" class="mobile back" 
+       style="
+         width: 350px; 
+         height: 400px; 
+         top: 60px; 
+         right: 20px; 
+         position: absolute; 
+         transform: rotate(0deg); 
+         opacity: 1;
+         z-index: 2;
+       ">
+
+</div>
+
   </div>
 </section>

@@ -1,4 +1,4 @@
-/* ── CARDS ── */
+/* ── CUSTOM STEP CARDS ── */
 .custom-step-card {
     background: #ffffff;
     border-radius: 20px;
@@ -8,7 +8,6 @@
     width: 100%;
     box-sizing: border-box;
     min-width: 0;
-    /* prevent overflow */
 }
 
 .custom-step-card:hover {
@@ -16,7 +15,6 @@
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
 }
 
-/* touch screens - no hover */
 @media (hover: none) {
     .custom-step-card:hover {
         transform: none;
@@ -24,7 +22,7 @@
     }
 }
 
-/* ── MOBILE IMAGE ── */
+/* ── MOBILE IMAGE INSIDE CARD ── */
 .mobile-img-2 {
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     max-width: 100%;
@@ -49,12 +47,13 @@
     width: 100%;
     max-width: 762px;
     margin: 30px auto 0;
-    /* margin-top 30px as requested */
     position: relative;
     display: flex;
     align-items: center;
+    justify-content: center;
     box-sizing: border-box;
     padding: 0 clamp(8px, 2vw, 16px);
+    gap: clamp(16px, 2vw, 32px);
 }
 
 /* ── STEP NUMBER BOX ── */
@@ -71,7 +70,6 @@
     align-items: center;
     z-index: 1;
     flex-shrink: 0;
-    /* circle kabhi squeeze na ho */
 }
 
 /* ── DIVIDER ── */
@@ -82,7 +80,6 @@
     margin: 0 10px;
     position: relative;
     min-width: 20px;
-    /* bahut choti screen pe bhi thoda space */
 }
 
 /* ── HERO BUTTON ── */
@@ -117,6 +114,7 @@
 @media (min-width: 1400px) {
     .steps-flow {
         max-width: 900px;
+        gap: 36px;
     }
 
     .step-number-box {
@@ -127,57 +125,110 @@
 
     .custom-step-card {
         padding: 36px;
+        border-radius: 24px;
+    }
+}
+
+/* ── DESKTOP 992px - 1399px ── */
+@media (max-width: 1399px) and (min-width: 992px) {
+    .steps-flow {
+        max-width: 780px;
+        gap: 28px;
+    }
+
+    .step-number-box {
+        width: 60px;
+        height: 60px;
+        font-size: 1.4rem;
+    }
+
+    .custom-step-card {
+        padding: 28px;
     }
 }
 
 /* ── TABLET 768px - 991px ── */
-@media (max-width: 991px) and (min-width: 601px) {
+@media (max-width: 991px) and (min-width: 768px) {
     .steps-flow {
         max-width: 560px;
+        gap: 20px;
     }
 
-    .divider {
-        margin: 0 6px;
+    .step-number-box {
+        width: 50px;
+        height: 50px;
+        font-size: 1.2rem;
+    }
+
+    .custom-step-card {
+        padding: 24px;
     }
 }
 
-/* ── MOBILE 768px se neeche ── */
-@media (max-width: 768px) {
+/* ── MOBILE 600px - 767px ── */
+@media (max-width: 767px) and (min-width: 601px) {
     .steps-flow {
         flex-direction: column;
         align-items: center;
         max-width: 100%;
         padding: 0 12px;
+        gap: 16px;
     }
 
     .divider {
         width: 4px;
-        height: clamp(30px, 5vw, 50px);
+        height: clamp(40px, 5vw, 50px);
         flex: unset;
         margin: 8px 0;
-        min-width: unset;
     }
 
     .custom-step-card {
         border-radius: 16px;
+        padding: 20px;
     }
 }
 
-/* ── VERY SMALL 360px ── */
-@media (max-width: 400px) {
+/* ── MOBILE 600px se neeche ── */
+@media (max-width: 600px) {
     .steps-flow {
-        padding: 0 8px;
+        flex-direction: column;
+        align-items: center;
+        padding: 0 10px;
+        gap: 12px;
+    }
+
+    .divider {
+        height: clamp(30px, 5vw, 40px);
+    }
+
+    .custom-step-card {
+        border-radius: 14px;
+        padding: 16px;
     }
 
     .step-number-box {
         width: 40px;
         height: 40px;
-        font-size: 0.9rem;
+        font-size: 1rem;
+    }
+}
+
+/* ── VERY SMALL 360px phones ── */
+@media (max-width: 400px) {
+    .steps-flow {
+        padding: 0 8px;
+        gap: 10px;
     }
 
     .custom-step-card {
         padding: 14px;
-        border-radius: 14px;
+        border-radius: 12px;
+    }
+
+    .step-number-box {
+        width: 36px;
+        height: 36px;
+        font-size: 0.9rem;
     }
 
     .divider {
@@ -185,20 +236,21 @@
     }
 }
 
-/* ── 4K screens ── */
+/* ── VERY LARGE / 4K screens ── */
 @media (min-width: 1800px) {
     .steps-flow {
         max-width: 1000px;
+        gap: 40px;
+    }
+
+    .custom-step-card {
+        padding: 40px;
+        border-radius: 28px;
     }
 
     .step-number-box {
         width: 76px;
         height: 76px;
         font-size: 1.8rem;
-    }
-
-    .custom-step-card {
-        padding: 40px;
-        border-radius: 24px;
     }
 }

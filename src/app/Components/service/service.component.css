@@ -29,7 +29,7 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
+    gap: clamp(16px, 2vw, 28px); /* responsive gap */
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
@@ -39,11 +39,9 @@
 
 /* ── COLUMN ── */
 .col-sm-4 {
-    flex: 1 1 280px;
-    /* grow/shrink, base 280px */
-    max-width: 350px;
+    flex: 1 1 clamp(260px, 30%, 350px); /* grow/shrink + responsive min/max */
+    max-width: 100%;
     min-width: 0;
-    /* prevent overflow */
     box-sizing: border-box;
 }
 
@@ -57,11 +55,10 @@
     background-color: #fff;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
-    height: 100%;
-    /* equal height cards */
     display: flex;
     flex-direction: column;
     align-items: center;
+    height: 100%;
 }
 
 /* ── CARD HOVER ── */
@@ -70,7 +67,6 @@
     box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
 }
 
-/* touch screens - no hover shift */
 @media (hover: none) {
     .custom-card:hover {
         transform: none;
@@ -92,27 +88,26 @@
     margin-top: 8px;
     line-height: 1.6;
     flex: 1;
-    /* push content evenly */
 }
 
 /* ── LARGE SCREENS - 3 cards per row ── */
-@media (min-width: 992px) {
+@media (min-width: 1200px) {
     .col-sm-4 {
-        flex: 0 0 calc(33.333% - 14px);
-        max-width: calc(33.333% - 14px);
+        flex: 0 0 calc(33.333% - clamp(14px, 2vw, 28px));
+        max-width: calc(33.333% - clamp(14px, 2vw, 28px));
     }
 }
 
 /* ── MEDIUM SCREENS - 2 cards per row ── */
-@media (max-width: 991px) and (min-width: 600px) {
+@media (max-width: 1199px) and (min-width: 768px) {
     .col-sm-4 {
-        flex: 0 0 calc(50% - 10px);
-        max-width: calc(50% - 10px);
+        flex: 0 0 calc(50% - clamp(10px, 2vw, 20px));
+        max-width: calc(50% - clamp(10px, 2vw, 20px));
     }
 }
 
 /* ── SMALL SCREENS - 1 card per row ── */
-@media (max-width: 599px) {
+@media (max-width: 767px) {
     .cards {
         margin-top: 40px;
         padding: 0 12px;
@@ -145,14 +140,14 @@
 }
 
 /* ── VERY LARGE SCREENS - 4K etc ── */
-@media (min-width: 1400px) {
+@media (min-width: 1800px) {
     .row.mb-4 {
-        max-width: 1400px;
-        gap: 28px;
+        max-width: 1600px;
+        gap: clamp(20px, 2.5vw, 32px);
     }
 
     .col-sm-4 {
-        flex: 0 0 calc(33.333% - 20px);
-        max-width: calc(33.333% - 20px);
+        flex: 0 0 calc(33.333% - clamp(20px, 2vw, 32px));
+        max-width: calc(33.333% - clamp(20px, 2vw, 32px));
     }
 }

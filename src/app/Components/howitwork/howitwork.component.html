@@ -1,4 +1,4 @@
-<div class="container my-5">
+<div class="container">
   <!-- Heading -->
   <div class="text-center mb-5">
     <h2>How to Install Our App</h2>
@@ -37,17 +37,72 @@
     </div>
   </div>
 
-  <div class="cta-section row align-items-center p-5 rounded" style="background:#ff4d43;">
-    <div class="col-md-6 mb-4 mb-md-0">
-      <h2>Be the Reason Someone Smiles Today!</h2>
-      <p class="lead mb-4">Your generosity can change lives. Every donation brings hope, support, and a brighter future.
-        Give today and make a difference!</p>
+  <!-- CTA Section -->
+  <div style="
+    background: #ff4d43;
+    border-radius: 20px;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    align-items: center;
+    min-height: 320px;
+    padding: 50px 50px 0 50px;
+  ">
+
+    <!-- Left: Text -->
+    <div style="width:45%; position:relative; z-index:2; padding-bottom:50px; flex-shrink:0;">
+      <h2 style="
+        color:#fff;
+        font-size:clamp(22px,3vw,38px);
+        font-weight:800;
+        line-height:1.2;
+        margin-bottom:14px;
+      ">
+        Be the Reason Someone Smiles Today!
+      </h2>
+      <p style="
+        color:rgba(255,255,255,0.85);
+        font-size:clamp(13px,1.1vw,15px);
+        line-height:1.7;
+        margin-bottom:28px;
+      ">
+        Your generosity can change lives. Every donation brings hope, support,
+        and a brighter future. Give today and make a difference!
+      </p>
       <button class="hero-btn">Donate Now</button>
     </div>
 
-    <!-- Right Column: Images -->
-    <div class="col-md-6 d-flex justify-content-end gap-3">
-      <img src="assets/payment_app_mockups.png" alt="Mobile Image 2" class="img-fluid mobile-img-2 reveal-right">
+    <!-- Right: 2 Phones -->
+    <div style="position: relative; width: 300px; height: 450px;">
+
+      <!-- Front phone (Groups.png) — PEECHE -->
+      <img src="assets/iPhone 14 Pro.png" alt="Phone 1" style="
+         width: 300px; 
+         height: 250px; 
+         top: 200px; 
+         right: 40px; 
+         position: absolute; 
+         transform: rotate(0deg); 
+         opacity: 1;
+         z-index: 1;
+       ">
+
+      <!-- Back phone (Body.png) — AAGE -->
+      <img src="assets/balon.jpg" alt="Phone 2" style="
+  width: 400px; 
+  height: 600px; 
+  top: 10px; 
+  left: 300px; 
+  position: absolute; 
+  transform: rotate(0deg); 
+  opacity: 1;
+  z-index: 2;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.35), 0 10px 30px rgba(0,0,0,0.2);
+  border-radius: 40px;
+">
+
     </div>
+
   </div>
+
 </div>
