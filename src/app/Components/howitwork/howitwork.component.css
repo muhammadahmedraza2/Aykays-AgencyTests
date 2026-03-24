@@ -1,256 +1,137 @@
-/* ── CUSTOM STEP CARDS ── */
-.custom-step-card {
-    background: #ffffff;
+/* ── CTA SECTION RESPONSIVE IMAGES ── */
+.cta-section {
+    background: #ff4d43;
     border-radius: 20px;
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    padding: clamp(18px, 2.5vw, 32px);
-    width: 100%;
-    box-sizing: border-box;
-    min-width: 0;
+    overflow: hidden;
+    position: relative;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: space-between;
+    padding: clamp(30px, 5vw, 50px);
 }
 
-.custom-step-card:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+.cta-left {
+    flex: 1 1 45%;
+    min-width: 280px;
+    z-index: 2;
 }
 
-@media (hover: none) {
-    .custom-step-card:hover {
-        transform: none;
-        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-    }
+.cta-left h2 {
+    color: #fff;
+    font-size: clamp(22px, 3vw, 38px);
+    font-weight: 800;
+    line-height: 1.2;
+    margin-bottom: 14px;
 }
 
-/* ── MOBILE IMAGE INSIDE CARD ── */
-.mobile-img-2 {
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
+.cta-left p {
+    color: rgba(255, 255, 255, 0.85);
+    font-size: clamp(13px, 1.1vw, 15px);
+    line-height: 1.7;
+    margin-bottom: 28px;
+}
+
+.cta-left .hero-btn {
+    margin-top: 10px;
+}
+
+.cta-right {
+    flex: 1 1 50%;
+    min-width: 280px;
+    position: relative;
+    height: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+/* Images inside CTA */
+.cta-right img {
     max-width: 100%;
     height: auto;
     display: block;
+    position: absolute;
+    object-fit: contain;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    border-radius: 20px;
 }
 
-.mobile-img-2:hover {
-    transform: translateY(-10px);
-    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+/* Front/back phones */
+.cta-right img.front {
+    z-index: 2;
+    width: 50%;
+    max-width: 250px;
+    top: 10%;
+    left: 25%;
+    box-shadow: 0 20px 50px rgba(0,0,0,0.35), 0 10px 30px rgba(0,0,0,0.2);
 }
 
-@media (hover: none) {
-    .mobile-img-2:hover {
-        transform: none;
-        box-shadow: none;
-    }
-}
-
-/* ── STEPS FLOW ── */
-.steps-flow {
-    width: 100%;
-    max-width: 762px;
-    margin: 30px auto 0;
-    position: relative;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    box-sizing: border-box;
-    padding: 0 clamp(8px, 2vw, 16px);
-    gap: clamp(16px, 2vw, 32px);
-}
-
-/* ── STEP NUMBER BOX ── */
-.step-number-box {
-    width: clamp(44px, 6vw, 60px);
-    height: clamp(44px, 6vw, 60px);
-    background: #ff4d43;
-    color: #fff;
-    font-size: clamp(1rem, 1.5vw, 1.5rem);
-    font-weight: 700;
-    border-radius: 50%;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+.cta-right img.back {
     z-index: 1;
-    flex-shrink: 0;
+    width: 40%;
+    max-width: 200px;
+    top: 20%;
+    left: 35%;
+    opacity: 0.95;
 }
 
-/* ── DIVIDER ── */
-.divider {
-    flex: 1;
-    height: 4px;
-    background: #ccc;
-    margin: 0 10px;
-    position: relative;
-    min-width: 20px;
-}
-
-/* ── HERO BUTTON ── */
-.hero-btn {
-    background: #fff;
-    color: #ff4d43;
-    border: 0;
-    padding: clamp(10px, 1.2vw, 14px) clamp(20px, 2vw, 32px);
-    border-radius: 25px;
-    font-size: clamp(13px, 1vw, 16px);
-    font-weight: 600;
-    cursor: pointer;
-    transition: background .3s, color .3s, transform .2s;
-    white-space: nowrap;
-}
-
-.hero-btn:hover {
-    background: #000;
-    color: #fff;
-    transform: translateY(-2px);
-}
-
-@media (hover: none) {
-    .hero-btn:hover {
-        background: #fff;
-        color: #ff4d43;
-        transform: none;
-    }
-}
-
-/* ── LARGE SCREENS 1400px+ ── */
-@media (min-width: 1400px) {
-    .steps-flow {
-        max-width: 900px;
-        gap: 36px;
-    }
-
-    .step-number-box {
-        width: 68px;
-        height: 68px;
-        font-size: 1.6rem;
-    }
-
-    .custom-step-card {
-        padding: 36px;
-        border-radius: 24px;
-    }
-}
-
-/* ── DESKTOP 992px - 1399px ── */
-@media (max-width: 1399px) and (min-width: 992px) {
-    .steps-flow {
-        max-width: 780px;
-        gap: 28px;
-    }
-
-    .step-number-box {
-        width: 60px;
-        height: 60px;
-        font-size: 1.4rem;
-    }
-
-    .custom-step-card {
-        padding: 28px;
-    }
-}
-
-/* ── TABLET 768px - 991px ── */
-@media (max-width: 991px) and (min-width: 768px) {
-    .steps-flow {
-        max-width: 560px;
-        gap: 20px;
-    }
-
-    .step-number-box {
-        width: 50px;
-        height: 50px;
-        font-size: 1.2rem;
-    }
-
-    .custom-step-card {
-        padding: 24px;
-    }
-}
-
-/* ── MOBILE 600px - 767px ── */
-@media (max-width: 767px) and (min-width: 601px) {
-    .steps-flow {
+/* Small screens adjustments */
+@media (max-width: 767px) {
+    .cta-section {
         flex-direction: column;
-        align-items: center;
-        max-width: 100%;
-        padding: 0 12px;
-        gap: 16px;
+        padding: clamp(20px, 5vw, 30px);
     }
 
-    .divider {
-        width: 4px;
-        height: clamp(40px, 5vw, 50px);
-        flex: unset;
-        margin: 8px 0;
+    .cta-left, .cta-right {
+        flex: 1 1 100%;
+        min-width: unset;
+        text-align: center;
     }
 
-    .custom-step-card {
-        border-radius: 16px;
-        padding: 20px;
-    }
-}
-
-/* ── MOBILE 600px se neeche ── */
-@media (max-width: 600px) {
-    .steps-flow {
-        flex-direction: column;
-        align-items: center;
-        padding: 0 10px;
-        gap: 12px;
+    .cta-right img.front {
+        width: 60%;
+        max-width: 180px;
+        top: 5%;
+        left: 20%;
     }
 
-    .divider {
-        height: clamp(30px, 5vw, 40px);
-    }
-
-    .custom-step-card {
-        border-radius: 14px;
-        padding: 16px;
-    }
-
-    .step-number-box {
-        width: 40px;
-        height: 40px;
-        font-size: 1rem;
+    .cta-right img.back {
+        width: 50%;
+        max-width: 150px;
+        top: 15%;
+        left: 25%;
     }
 }
 
-/* ── VERY SMALL 360px phones ── */
+/* Extra small 400px */
 @media (max-width: 400px) {
-    .steps-flow {
-        padding: 0 8px;
-        gap: 10px;
+    .cta-right img.front {
+        width: 70%;
+        max-width: 140px;
+        top: 0;
+        left: 15%;
     }
 
-    .custom-step-card {
-        padding: 14px;
-        border-radius: 12px;
-    }
-
-    .step-number-box {
-        width: 36px;
-        height: 36px;
-        font-size: 0.9rem;
-    }
-
-    .divider {
-        height: 28px;
+    .cta-right img.back {
+        width: 60%;
+        max-width: 120px;
+        top: 10%;
+        left: 20%;
     }
 }
 
-/* ── VERY LARGE / 4K screens ── */
-@media (min-width: 1800px) {
-    .steps-flow {
-        max-width: 1000px;
-        gap: 40px;
-    }
 
-    .custom-step-card {
-        padding: 40px;
-        border-radius: 28px;
-    }
-
-    .step-number-box {
-        width: 76px;
-        height: 76px;
-        font-size: 1.8rem;
-    }
+@media (max-width: 600px) {
+  .responsive-phone {
+    position: relative !important; /* stack vertically */
+    display: block;
+    margin: 10px auto; /* center horizontally */
+    top: auto !important;
+    left: auto !important;
+    width: 70% !important;
+    max-width: 180px !important;
+    height: auto !important;
+  }
 }
