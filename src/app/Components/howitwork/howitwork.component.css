@@ -1,137 +1,156 @@
-/* ── CTA SECTION RESPONSIVE IMAGES ── */
+/* ── CTA SECTION ── */
 .cta-section {
-    background: #ff4d43;
-    border-radius: 20px;
-    overflow: hidden;
-    position: relative;
-    display: flex;
-    flex-wrap: wrap;
-    align-items: center;
-    justify-content: space-between;
-    padding: clamp(30px, 5vw, 50px);
+  background: #ff4d43;
+  border-radius: 20px;
+  overflow: hidden;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: space-between;
+  padding: clamp(35px, 5vw, 55px) clamp(30px, 5vw, 60px) 0;
+  gap: 20px;
+  min-height: 340px;
 }
 
+/* ── LEFT ── */
 .cta-left {
-    flex: 1 1 45%;
-    min-width: 280px;
-    z-index: 2;
+  flex: 1 1 45%;
+  max-width: 500px;
+  z-index: 2;
+  padding-bottom: 50px;
 }
-
 .cta-left h2 {
-    color: #fff;
-    font-size: clamp(22px, 3vw, 38px);
-    font-weight: 800;
-    line-height: 1.2;
-    margin-bottom: 14px;
+  color: #fff;
+  font-size: clamp(22px, 3vw, 38px);
+  font-weight: 800;
+  line-height: 1.2;
+  margin-bottom: 14px;
 }
-
 .cta-left p {
-    color: rgba(255, 255, 255, 0.85);
-    font-size: clamp(13px, 1.1vw, 15px);
-    line-height: 1.7;
-    margin-bottom: 28px;
+  color: rgba(255,255,255,0.85);
+  font-size: clamp(13px, 1.1vw, 15px);
+  line-height: 1.7;
+  margin-bottom: 24px;
 }
 
-.cta-left .hero-btn {
-    margin-top: 10px;
-}
-
+/* ── RIGHT ── */
 .cta-right {
-    flex: 1 1 50%;
-    min-width: 280px;
-    position: relative;
-    height: auto;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    margin-top: 20px;
+  flex: 1 1 50%;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  min-height: 300px;
 }
 
-/* Images inside CTA */
-.cta-right img {
-    max-width: 100%;
-    height: auto;
-    display: block;
-    position: absolute;
-    object-fit: contain;
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
-    border-radius: 20px;
+/* ── PHONES — DESKTOP ── */
+.phone-back,
+.phone-front {
+  position: absolute;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.3));
+  transition: all 0.3s ease;
+  border-radius: 20px;
 }
 
-/* Front/back phones */
-.cta-right img.front {
-    z-index: 2;
-    width: 50%;
-    max-width: 250px;
-    top: 10%;
-    left: 25%;
-    box-shadow: 0 20px 50px rgba(0,0,0,0.35), 0 10px 30px rgba(0,0,0,0.2);
+.phone-back {
+  width: 200px;
+  bottom: 0;
+  left: 0;
+  z-index: 1;
+  opacity: 0.92;
 }
 
-.cta-right img.back {
-    z-index: 1;
-    width: 40%;
-    max-width: 200px;
-    top: 20%;
-    left: 35%;
-    opacity: 0.95;
+.phone-front {
+  width: 240px;
+  bottom: 0;
+  right: 0;
+  z-index: 2;
 }
 
-/* Small screens adjustments */
-@media (max-width: 767px) {
-    .cta-section {
-        flex-direction: column;
-        padding: clamp(20px, 5vw, 30px);
-    }
-
-    .cta-left, .cta-right {
-        flex: 1 1 100%;
-        min-width: unset;
-        text-align: center;
-    }
-
-    .cta-right img.front {
-        width: 60%;
-        max-width: 180px;
-        top: 5%;
-        left: 20%;
-    }
-
-    .cta-right img.back {
-        width: 50%;
-        max-width: 150px;
-        top: 15%;
-        left: 25%;
-    }
-}
-
-/* Extra small 400px */
-@media (max-width: 400px) {
-    .cta-right img.front {
-        width: 70%;
-        max-width: 140px;
-        top: 0;
-        left: 15%;
-    }
-
-    .cta-right img.back {
-        width: 60%;
-        max-width: 120px;
-        top: 10%;
-        left: 20%;
-    }
-}
-
-
-@media (max-width: 600px) {
-  .responsive-phone {
-    position: relative !important; /* stack vertically */
-    display: block;
-    margin: 10px auto; /* center horizontally */
-    top: auto !important;
-    left: auto !important;
-    width: 70% !important;
-    max-width: 180px !important;
-    height: auto !important;
+/* ── TABLET 1024px ── */
+@media (max-width: 1024px) {
+  .cta-section {
+    padding-bottom: 0;
   }
+  .phone-back {
+    width: 175px;
+    left: calc(50% - 200px);
+  }
+  .phone-front {
+    width: 210px;
+    right: calc(50% - 210px);
+  }
+}
+
+/* ── TABLET 768px ── */
+@media (max-width: 768px) {
+  .cta-section {
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+    padding: 35px 25px 0;
+    min-height: auto;
+    overflow: hidden;
+  }
+  .cta-left {
+    max-width: 100%;
+    padding-bottom: 20px;
+  }
+  .cta-right {
+    width: 100%;
+    min-height: 260px;
+    position: relative;
+  }
+  .phone-back {
+    width: 155px;
+    left: calc(50% - 175px);
+    bottom: 0;
+  }
+  .phone-front {
+    width: 185px;
+    right: calc(50% - 185px);
+    bottom: 0;
+  }
+}
+
+/* ── MOBILE 767px — STATIC FLOW ── */
+@media (max-width: 767px) {
+  .cta-section {
+    padding: 30px 20px 25px;
+    gap: 16px;
+  }
+  .cta-right {
+    position: static;
+    width: 100%;
+    min-height: auto;
+    display: flex;
+    flex-direction: row;        /* column tha, row kiya */
+    align-items: flex-end;      /* neeche se align */
+    justify-content: center;
+    gap: 10px;
+  }
+  .phone-back,
+  .phone-front {
+    position: static !important;
+    display: block;
+    transform: none !important;
+    margin-bottom: 0 !important; /* overlap hata diya */
+  }
+  .phone-back  { width: 120px; opacity: 1; }
+  .phone-front { width: 155px; }
+}
+
+/* ── SMALL MOBILE 480px ── */
+@media (max-width: 480px) {
+  .cta-section {
+    padding: 25px 15px 20px;
+    border-radius: 16px;
+  }
+  .cta-left h2 { font-size: 19px; }
+  .cta-left p  { font-size: 12px; margin-bottom: 16px; }
+  .cta-right   { gap: 8px; }
+  .phone-back  { width: 100px; }
+  .phone-front { width: 130px; }
 }

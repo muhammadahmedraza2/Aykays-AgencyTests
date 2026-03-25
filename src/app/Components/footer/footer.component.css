@@ -1,65 +1,188 @@
+/* ── SECTION ── */
 .download {
-  background: #f3f3f3;
-  padding: clamp(40px, 6vw, 80px) clamp(16px, 5vw, 60px);
-  box-sizing: border-box;
+  background: #f5f5f5;
+  padding: clamp(40px, 5vw, 70px) clamp(20px, 5vw, 80px);
 }
 
+/* ── CONTAINER ── */
 .download-container {
   background: #ff4d43;
-  border-radius: clamp(20px, 3vw, 30px);
-  padding: clamp(32px, 5vw, 60px);
+  border-radius: 30px;
+  padding: clamp(35px, 4vw, 60px) clamp(30px, 4vw, 70px);
   display: flex;
   justify-content: space-between;
   align-items: center;
   color: white;
   position: relative;
   overflow: hidden;
-  box-sizing: border-box;
-  min-height: clamp(260px, 35vw, 420px);
   gap: 30px;
+  max-width: 1400px;
+  margin: auto;
+  min-height: 380px;
 }
 
-/* LEFT */
-.download-left { width: 50%; z-index:2; flex-shrink:0; }
-.download-left h1 { font-size: clamp(24px,3.5vw,42px); line-height:1.2; margin-bottom:clamp(10px,1.5vw,15px);}
-.subtitle { opacity:.9; margin-bottom:10px; font-size:clamp(13px,1.2vw,16px);}
-.desc { opacity:.8; margin-bottom:clamp(20px,2.5vw,30px); line-height:1.6; font-size:clamp(13px,1.1vw,15px); max-width:400px; }
+/* ── LEFT ── */
+.download-left {
+  flex: 1;
+  max-width: 520px;
+  z-index: 2;
+}
+.download-left h1 {
+  font-size: clamp(24px, 3vw, 44px);
+  line-height: 1.2;
+  margin-bottom: 12px;
+  font-weight: 800;
+}
+.subtitle {
+  opacity: 0.92;
+  margin-bottom: 8px;
+  font-size: clamp(13px, 1.1vw, 16px);
+}
+.desc {
+  opacity: 0.85;
+  margin-bottom: 28px;
+  line-height: 1.6;
+  font-size: clamp(13px, 1vw, 15px);
+}
 
-/* STORE BUTTONS */
-.store-buttons { display:flex; gap:clamp(10px,1.5vw,15px); flex-wrap:wrap;}
-.store { background:white; border:none; border-radius:30px; padding:clamp(8px,1vw,10px) clamp(14px,1.5vw,18px); display:flex; align-items:center; gap:10px; cursor:pointer; transition: transform .2s ease, box-shadow .2s ease; box-shadow:0 4px 15px rgba(0,0,0,0.12); white-space:nowrap; }
-.store:hover { transform:translateY(-3px); box-shadow:0 8px 24px rgba(0,0,0,0.18); }
-.store:active { transform:scale(.97); }
-.store img { width: clamp(22px, 2.5vw, 30px); height: clamp(22px,2.5vw,30px); object-fit:contain; flex-shrink:0; }
-.store span { display:block; font-size:clamp(9px,0.8vw,12px); color:#555; line-height:1; margin-bottom:2px;}
-.store h4 { margin:0; font-size:clamp(12px,1.1vw,14px); color:black; font-weight:700; line-height:1;}
+/* ── BUTTONS ── */
+.store-buttons {
+  display: flex;
+  gap: 14px;
+  flex-wrap: wrap;
+}
+.store {
+  background: white;
+  border: none;
+  border-radius: 16px;
+  padding: 11px 20px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 6px 20px rgba(0,0,0,0.15);
+  min-width: 150px;
+}
+.store:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 14px 35px rgba(0,0,0,0.22);
+}
+.store-icon { font-size: 24px; color: black; }
+.store span { font-size: 10px; color: #777; display: block; }
+.store h4   { margin: 0; font-size: 14px; color: black; font-weight: 700; }
 
-/* RIGHT PHONES */
-.download-right { width:50%; position:relative; display:flex; justify-content:center; align-items:flex-end; height:clamp(200px,28vw,340px); flex-shrink:0; }
-.mobile { position:absolute; width:clamp(160px,22vw,300px); max-width:100%; display:block; transition:all .3s ease; }
-.front { right:clamp(10px,3vw,40px); bottom:clamp(-30px,-3vw,-20px); z-index:2; }
-.back { right:clamp(120px,16vw,200px); bottom:clamp(-30px,-2vw,-60px); opacity:.9; z-index:1; }
+/* ── RIGHT ── */
+.download-right {
+  flex: 1;
+  position: relative;
+  display: flex;
+  align-items: flex-end;
+  justify-content: center;
+  min-height: 340px;
+}
 
-/* RESPONSIVE STACK ON MOBILE */
+/* ── PHONES — DESKTOP ── */
+.mobile {
+  position: absolute;
+  height: auto;
+  object-fit: contain;
+  filter: drop-shadow(0 20px 40px rgba(0,0,0,0.3));
+  transition: all 0.4s ease;
+}
+.back {
+  width: 220px;
+  bottom: -20px;
+  left: 0;
+  z-index: 1;
+  opacity: 0.92;
+}
+.front {
+  width: 260px;
+  bottom: -20px;
+  right: 0;
+  z-index: 2;
+}
+
+/* ════════════════════
+   TABLET — 1024px
+════════════════════ */
+@media (max-width: 1024px) {
+  .download-container {
+    flex-direction: column;
+    text-align: center;
+    min-height: auto;
+    padding-bottom: 40px;
+  }
+  .download-left  { max-width: 100%; }
+  .store-buttons  { justify-content: center; }
+  .download-right {
+    width: 100%;
+    min-height: 280px;
+    position: relative;
+  }
+  .back  { width: 195px; left: calc(50% - 220px); bottom: 0; }
+  .front { width: 225px; right: calc(50% - 220px); bottom: 0; }
+}
+
+/* ════════════════════
+   MOBILE — 767px
+════════════════════ */
 @media (max-width: 767px) {
-  .download-container { flex-direction:column; text-align:center; padding:40px 24px clamp(180px,40vw,260px); gap:0; }
-  .download-left { width:100%; margin-bottom:20px; }
-  .download-right { width:100%; position:relative; height:auto; display:flex; justify-content:center; align-items:center; gap:10px; margin-top:10px; }
-  .mobile { position:relative !important; width:70%; max-width:180px !important; height:auto !important; margin:0 auto !important; bottom:auto !important; right:auto !important; left:auto !important; }
-  .front, .back { position:relative !important; right:auto !important; left:auto !important; bottom:auto !important; }
-  .store-buttons { justify-content:center; }
+  .download-right {
+    position: static;
+    width: 100%;
+    min-height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 0;
+    margin: 0;
+  }
+  .mobile {
+    position: static !important;
+    transform: none !important;
+    display: block;
+  }
+  .back {
+    width: 120px;
+    margin-bottom: 10px; /* -20px tha, positive kiya — overlap nahi hoga */
+    opacity: 1;
+  }
+  .front {
+    width: 170px;
+    margin-top: 10px; /* thoda neeche */
+  }
+
+  .store-buttons { justify-content: center; }
+  .store { min-width: 135px; }
 }
 
-/* VERY SMALL 400px */
-@media (max-width: 400px) {
-  .download { padding:30px 10px; }
-  .download-container { padding:28px 16px clamp(150px,38vw,200px); border-radius:18px; }
-  .download-left h1 { font-size:22px; }
-  .store-buttons { flex-direction:column; align-items:center; }
-  .mobile { width: clamp(100px,24vw,140px); }
+/* ════════════════════
+   SMALL — 480px
+════════════════════ */
+@media (max-width: 480px) {
+  .download { padding: 25px 12px; }
+  .download-container {
+    padding: 25px 16px 20px;
+    border-radius: 22px;
+    gap: 12px;
+  }
+  .download-left h1 { font-size: 18px; }
+  .desc { font-size: 12px; margin-bottom: 14px; }
+  .store-buttons {
+    flex-direction: column;
+    align-items: center;
+    gap: 9px;
+  }
+  .store { width: 160px; }
+  .back  { 
+    width: 100px; 
+    margin-bottom: 8px; /* positive rakha */
+  }
+  .front { 
+    width: 145px;
+    margin-top: 8px;
+  }
 }
-
-/* LARGE 1400px+ */
-@media (min-width: 1400px) { .download-container { max-width:1300px; margin:0 auto; } .mobile { width:320px; } }
-/* 4K screens 1800px+ */
-@media (min-width:1800px) { .download-container { max-width:1600px; margin:0 auto; } .mobile { width:340px; } }
